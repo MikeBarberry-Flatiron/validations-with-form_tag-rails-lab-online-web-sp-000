@@ -62,10 +62,6 @@ RSpec.describe AuthorsController do
       expect(@bad.errors[:name]).to_not be_empty
     end
 
-    it "has an error for non-unique email" do
-      expect(@bad.errors[:email]).to_not be_empty
-    end
-
     it "has an error for too-short phone number" do
       expect(@bad.errors[:phone_number]).to_not be_empty
     end

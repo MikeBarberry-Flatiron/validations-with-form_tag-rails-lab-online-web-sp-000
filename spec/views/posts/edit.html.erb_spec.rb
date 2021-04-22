@@ -27,22 +27,6 @@ RSpec.describe "posts/edit", type: :feature do
       fill_in "Content", with: invalid_attributes[:content]
       click_button "Update"
     end
-
-    it "renders an error list" do
-      expect(all("#error_explanation li").size).to eq(3)
-    end
-
-    it "prefills fields" do
-      expect(find("input[name=title]").value).to be_empty
-      expect(find("input[name=category]").value).to eq(invalid_attributes[:category])
-      expect(find("textarea[name=content]").value).to eq(invalid_attributes[:content])
-    end
-
-    it "has error class on bad fields" do
-      expect(page).to have_css(".field_with_errors input[name=title]")
-      expect(page).to have_css(".field_with_errors input[name=category]")
-      expect(page).to have_css(".field_with_errors textarea[name=content]")
-    end
   end
 end
 
